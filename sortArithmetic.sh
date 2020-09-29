@@ -43,3 +43,28 @@ echo -e
 
 len=${#array[@]}
 echo "print Array = ${array[@]}"
+
+echo -e
+echo "sort results to print in Descending Order"
+for (( j=0; j<${len}; j++));do
+	for (( k=$((j + 1)); k<${len}; k++ ));do
+		if [ ${array[j]} -le ${array[k]} ]
+		then
+			temp=${array[j]}
+			array[j]=${array[k]}
+			array[k]=$temp
+		fi
+	done
+done
+echo "==> ${array[@]}"
+
+
+
+
+
+
+
+
+
+
+
