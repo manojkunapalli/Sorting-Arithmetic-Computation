@@ -58,9 +58,19 @@ for (( j=0; j<${len}; j++));do
 done
 echo "==> ${array[@]}"
 
-
-
-
+echo -e
+echo "sort results to print in Ascending Order"
+for (( j=0; j<${len}; j++));do
+        for (( k=$((j + 1)); k<${len}; k++ ));do
+                if [ ${array[j]} -gt ${array[k]} ]
+                then
+                        temp=${array[j]}
+                        array[j]=${array[k]}
+                        array[k]=$temp
+                fi
+        done
+done
+echo "==> ${array[@]}"
 
 
 
